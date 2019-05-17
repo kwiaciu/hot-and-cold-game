@@ -1,0 +1,27 @@
+.pick-number {
+	height: 60px;
+}
+
+/* /* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    /* width: 100px; */
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+
+}
+
+#number-input {
+	width: 200px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+
+}
+
+input[type="submit"] {
+	width: 100px;
+}

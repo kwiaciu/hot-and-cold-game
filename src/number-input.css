@@ -1,6 +1,8 @@
 .pick-number {
-	height: 60px;
+	height: 100px;
+	padding: 10px;
 }
+
 
 /* /* Hide HTML5 Up and Down arrows. */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {

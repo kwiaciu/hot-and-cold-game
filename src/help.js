@@ -1,5 +1,7 @@
 import React from 'react';
 import './help.css';
+import Button from '@material-ui/core/Button';
+
 
 export default class Help extends React.Component {
 	constructor(props){
@@ -26,9 +28,9 @@ export default class Help extends React.Component {
 			)
 		} else {
 			return (
-				<div onClick={ () => this.setState({clicked:true})} className="help">
+				<Button onClick={ () => this.setState({clicked:true})} className="help">
 					Help
-				</div>
+				</Button>
 			)
 		}
 	}

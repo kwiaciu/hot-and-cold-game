@@ -1,9 +1,15 @@
 import React from 'react';
 import './core.css';
-import Feedback from './feedback';
 import NumberInput from './number-input';
-import TextLink from './text-link';
 import CheckedNumbers from './checked-numbers';
+import AppBar from '@material-ui/core/AppBar';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
+
+
 
 export default class Core extends React.Component {
 	constructor(props) {
@@ -107,22 +113,29 @@ export default class Core extends React.Component {
 		
 		if (this.state.isCorrect) {
 			return (
-				<div className="core">
-					<Feedback feedback={feedback} />
-					<button onClick={ () => window.location.reload()}>Restart</button>
-					<TextLink content={'Number of tries:'+this.state.triedNumbers.length}/>
+				<Card className="core">
+					<CardHeader title={feedback} />
+					<Button variant='contained' onClick={ () => window.location.reload()}>Restart</Button>
+					<Typography variant="subtitle1" color="textSecondary">
+            		Number of tries: {this.state.triedNumbers.length}
+          			</Typography>
 					<CheckedNumbers checkedNumbers={this.state.triedNumbers} feedback={this.state.triedNumbersFeedback} />
-				</div>
+				</Card>
 			)
 		} else {
 			return (
-				<div className="core">
-					<Feedback feedback={feedback} />
+				<Card className="core">
+					<CardHeader title={feedback} />
+					<Divider/>
 					<NumberInput id="number-input" onSubmit={input => {this.setTriedNumbers(input); this.checkNumber(input)}}/>
-					<TextLink content={'Winning number: '+correctNumber}/>
-					<TextLink content={'Number of tries: '+this.state.triedNumbers.length}/>
+					<Typography variant="subtitle1" color="textSecondary">
+					Winning number: {correctNumber}
+          			</Typography>
+					<Typography variant="subtitle1" color="textSecondary">
+            		Number of tries: {this.state.triedNumbers.length}
+          			</Typography>
 					<CheckedNumbers checkedNumbers={this.state.triedNumbers} feedback={this.state.triedNumbersFeedback} />
-				</div>
+				</Card>
 		
 			)
 		}

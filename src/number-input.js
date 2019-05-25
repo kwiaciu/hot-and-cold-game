@@ -1,5 +1,8 @@
 import React from 'react';
 import './number-input.css';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+
 
 export default class NumberInput extends React.Component {
 	constructor(props) {
@@ -29,18 +32,17 @@ export default class NumberInput extends React.Component {
 		<div className="pick-number">
 			<form id={this.props.id} 
 			onSubmit={ (e) => this.handleSubmit(e)}>
-				<input 
+				<Input inputProps={{min:"1", max: '100'}}
 				id={this.props.id}
 				type='number' 
-				min="1" max="100" 
-				placeholder="Enter number between 1 and 100"
+				placeholder="Enter number"
 				value={this.state.value}
 				onChange={e => this.handleChange(e.target.value)}
-				 /><br />
+				 /><br /><br />
 				
 			
 				
-				<input type='submit' value='Submit' />
+				<Button variant='contained' type='submit' value='Submit'>Check</Button>
 
 			</form>
 		</div>
